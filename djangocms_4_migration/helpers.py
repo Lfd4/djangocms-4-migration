@@ -1,6 +1,6 @@
 import logging
-import settings
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 
@@ -16,7 +16,7 @@ def get_or_create_migration_user(user_model=get_user_model()):
     part of the cms migration.
     """
     return user_model.objects.get_or_create(
-        username='djangocms_4_migration_user',
+        username="djangocms_4_migration_user",
         is_staff=True,
         is_superuser=True,
     )
